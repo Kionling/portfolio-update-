@@ -1,4 +1,18 @@
 {
+  
+    "main": "server.js",
+    "name": "comando-link",
+    "version": "1.0.0",
+    "description": "The convenience of a website with multiple links belonging to one owner is the easiest way to define a digital business card. This repository contains the digital business card of the music group Comando Unico. All respective links to the music group will be located on this website.",
+    "scripts": {
+      "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
+      "start:prod": "node server.js",
+      "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
+      "client": "cd client && npm run start",
+      "install": "cd client && npm install",
+      "build": "cd client && npm run build",
+      "heroku-postbuild": "npm run build"
+    },
   "dependencies": {
     "express": "^4.18.2",
     "heroku": "^7.68.0",
@@ -12,7 +26,7 @@
   "name": "portfolio-update-",
   "description": "",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
